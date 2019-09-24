@@ -1,0 +1,2005 @@
+<!doctype html>
+<html>
+  <head>
+    <title>College Earnings</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>College Earnings</h1>
+    <div class="app-desc">Documentation for College Earnings Back End</div>
+    <div class="app-desc">More information: <a href="http://www.github.com/gcj2">http://www.github.com/gcj2</a></div>
+    <div class="app-desc">Contact Info: <a href="GCJohnston91@gmail.com">GCJohnston91@gmail.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/</div>
+    <div class="license-info">MIT</div>
+    <div class="license-url">https://github.com/LambdaSchool/java-starthere/blob/master/LICENSE</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#ApIsController">ApIsController</a></h4>
+  <ul>
+  <li><a href="#listABookGivenISBNUsingGET"><code><span class="http-method">get</span> /otherapis/openlibrary/{isbn}</code></a></li>
+  </ul>
+  <h4><a href="#LogoutController">LogoutController</a></h4>
+  <ul>
+  <li><a href="#logoutUsingGET"><code><span class="http-method">get</span> /oauth/revoke-token</code></a></li>
+  </ul>
+  <h4><a href="#OpenController">OpenController</a></h4>
+  <ul>
+  <li><a href="#addNewUserUsingPOST"><code><span class="http-method">post</span> /createnewuser</code></a></li>
+  <li><a href="#returnNoFaviconUsingGET"><code><span class="http-method">get</span> /favicon.ico</code></a></li>
+  </ul>
+  <h4><a href="#RolesController">RolesController</a></h4>
+  <ul>
+  <li><a href="#addNewRoleUsingPOST"><code><span class="http-method">post</span> /roles/role</code></a></li>
+  <li><a href="#deleteRoleByIdUsingDELETE"><code><span class="http-method">delete</span> /roles/role/{id}</code></a></li>
+  <li><a href="#getRoleByIdUsingGET"><code><span class="http-method">get</span> /roles/role/{roleId}</code></a></li>
+  <li><a href="#getRoleByNameUsingGET"><code><span class="http-method">get</span> /roles/role/name/{roleName}</code></a></li>
+  <li><a href="#listRolesUsingGET"><code><span class="http-method">get</span> /roles/roles</code></a></li>
+  </ul>
+  <h4><a href="#UserController">UserController</a></h4>
+  <ul>
+  <li><a href="#addNewUserUsingPOST1"><code><span class="http-method">post</span> /users/user</code></a></li>
+  <li><a href="#deleteUserByIdUsingDELETE"><code><span class="http-method">delete</span> /users/user/{id}</code></a></li>
+  <li><a href="#getCurrentUserNameUsingGET"><code><span class="http-method">get</span> /users/getusername</code></a></li>
+  <li><a href="#getUserByIdUsingGET"><code><span class="http-method">get</span> /users/user/{userId}</code></a></li>
+  <li><a href="#getUserByNameUsingGET"><code><span class="http-method">get</span> /users/user/name/{userName}</code></a></li>
+  <li><a href="#listAllUsersUsingGET"><code><span class="http-method">get</span> /users/users</code></a></li>
+  <li><a href="#postUserRoleByIdsUsingPOST"><code><span class="http-method">post</span> /users/user/{userid}/role/{roleid}</code></a></li>
+  <li><a href="#updateUserUsingPUT"><code><span class="http-method">put</span> /users/user/{id}</code></a></li>
+  </ul>
+  <h4><a href="#UseremailController">UseremailController</a></h4>
+  <ul>
+  <li><a href="#addNewQuoteUsingPOST"><code><span class="http-method">post</span> /useremails/useremail</code></a></li>
+  <li><a href="#deleteQuoteByIdUsingDELETE"><code><span class="http-method">delete</span> /useremails/useremail/{useremailid}</code></a></li>
+  <li><a href="#findQuoteByUserNameUsingGET"><code><span class="http-method">get</span> /useremails/username/{userName}</code></a></li>
+  <li><a href="#getUserEmailByIdUsingGET"><code><span class="http-method">get</span> /useremails/useremail/{useremailId}</code></a></li>
+  <li><a href="#listAllUseremailsUsingGET"><code><span class="http-method">get</span> /useremails/useremails</code></a></li>
+  </ul>
+
+  <h1><a name="ApIsController">ApIsController</a></h1>
+  <div class="method"><a name="listABookGivenISBNUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /otherapis/openlibrary/{isbn}</code></pre></div>
+    <div class="method-summary">listABookGivenISBN (<span class="nickname">listABookGivenISBNUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">isbn (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; isbn </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"{}"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="LogoutController">LogoutController</a></h1>
+  <div class="method"><a name="logoutUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /oauth/revoke-token</code></pre></div>
+    <div class="method-summary">Logs user out by deleting token. (<span class="nickname">logoutUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User Logged Out
+        
+    <h4 class="field-label">404</h4>
+    User Could Not Be Logged Out
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="OpenController">OpenController</a></h1>
+  <div class="method"><a name="addNewUserUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /createnewuser</code></pre></div>
+    <div class="method-summary">Create a new user. (<span class="nickname">addNewUserUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">newuser <a href="#User">User</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; newuser </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User Created
+        
+    <h4 class="field-label">404</h4>
+    User could not be created
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="returnNoFaviconUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /favicon.ico</code></pre></div>
+    <div class="method-summary">returnNoFavicon (<span class="nickname">returnNoFaviconUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="RolesController">RolesController</a></h1>
+  <div class="method"><a name="addNewRoleUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /roles/role</code></pre></div>
+    <div class="method-summary">addNewRole (<span class="nickname">addNewRoleUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">newRole <a href="#Role">Role</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; newRole </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteRoleByIdUsingDELETE"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /roles/role/{id}</code></pre></div>
+    <div class="method-summary">deleteRoleById (<span class="nickname">deleteRoleByIdUsingDELETE</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getRoleByIdUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /roles/role/{roleId}</code></pre></div>
+    <div class="method-summary">getRoleById (<span class="nickname">getRoleByIdUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">roleId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; roleId format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"{}"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getRoleByNameUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /roles/role/name/{roleName}</code></pre></div>
+    <div class="method-summary">getRoleByName (<span class="nickname">getRoleByNameUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">roleName (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; roleName </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"{}"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="listRolesUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /roles/roles</code></pre></div>
+    <div class="method-summary">listRoles (<span class="nickname">listRolesUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"{}"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="UserController">UserController</a></h1>
+  <div class="method"><a name="addNewUserUsingPOST1"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /users/user</code></pre></div>
+    <div class="method-summary">Add new user. (<span class="nickname">addNewUserUsingPOST1</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">newuser <a href="#User">User</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; newuser </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User Created
+        
+    <h4 class="field-label">404</h4>
+    User could not be created
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteUserByIdUsingDELETE"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /users/user/{id}</code></pre></div>
+    <div class="method-summary">Delete user by ID. (<span class="nickname">deleteUserByIdUsingDELETE</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User Deleted
+        
+    <h4 class="field-label">404</h4>
+    User Not Found
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getCurrentUserNameUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /users/getusername</code></pre></div>
+    <div class="method-summary">Get current user name. (<span class="nickname">getCurrentUserNameUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">authenticated (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  </div><div class="param">authorities[0].authority (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  </div><div class="param">credentials (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  </div><div class="param">details (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  </div><div class="param">principal (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Username Found
+        
+    <h4 class="field-label">404</h4>
+    Username Not Found
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getUserByIdUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /users/user/{userId}</code></pre></div>
+    <div class="method-summary">Get user by ID. (<span class="nickname">getUserByIdUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; userId format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User(s) Found
+        
+    <h4 class="field-label">404</h4>
+    User Not Found
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getUserByNameUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /users/user/name/{userName}</code></pre></div>
+    <div class="method-summary">Get user by name. (<span class="nickname">getUserByNameUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">userName (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; userName </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User Found
+        
+    <h4 class="field-label">404</h4>
+    User Not Found
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="listAllUsersUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /users/users</code></pre></div>
+    <div class="method-summary">returns all users (<span class="nickname">listAllUsersUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">page (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Results page you want to retrieve (0..N) </div><div class="param">size (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Number of records per page. </div><div class="param">sort (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="postUserRoleByIdsUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /users/user/{userid}/role/{roleid}</code></pre></div>
+    <div class="method-summary">postUserRoleByIds (<span class="nickname">postUserRoleByIdsUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">roleid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; roleid format: int64</div><div class="param">userid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; userid format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateUserUsingPUT"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /users/user/{id}</code></pre></div>
+    <div class="method-summary">Update user by ID. (<span class="nickname">updateUserUsingPUT</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">updateUser <a href="#User">User</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; updateUser </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User Updated
+        
+    <h4 class="field-label">404</h4>
+    User Not Found
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="UseremailController">UseremailController</a></h1>
+  <div class="method"><a name="addNewQuoteUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /useremails/useremail</code></pre></div>
+    <div class="method-summary">addNewQuote (<span class="nickname">addNewQuoteUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">newUseremail <a href="#Useremail">Useremail</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; newUseremail </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteQuoteByIdUsingDELETE"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /useremails/useremail/{useremailid}</code></pre></div>
+    <div class="method-summary">deleteQuoteById (<span class="nickname">deleteQuoteByIdUsingDELETE</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">useremailid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; useremailid format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="findQuoteByUserNameUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /useremails/username/{userName}</code></pre></div>
+    <div class="method-summary">findQuoteByUserName (<span class="nickname">findQuoteByUserNameUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">userName (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; userName </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"{}"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getUserEmailByIdUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /useremails/useremail/{useremailId}</code></pre></div>
+    <div class="method-summary">Get user email by ID. (<span class="nickname">getUserEmailByIdUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">useremailId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; useremailId format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+}, {
+  "savedSearches" : [ {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  }, {
+    "collegename" : "collegename",
+    "earnings" : "earnings",
+    "searchid" : 0,
+    "city" : "city",
+    "degree" : "degree",
+    "state" : "state"
+  } ],
+  "useremails" : [ {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  }, {
+    "useremailid" : 6,
+    "useremail" : "useremail"
+  } ],
+  "password" : "password",
+  "userroles" : [ {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  }, {
+    "role" : {
+      "userroles" : [ null, null ],
+      "roleid" : 5,
+      "name" : "name"
+    }
+  } ],
+  "authority" : [ {
+    "authority" : "authority"
+  }, {
+    "authority" : "authority"
+  } ],
+  "userid" : 1,
+  "passwordNoEncrypt" : "passwordNoEncrypt",
+  "username" : "username"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User(s) Found
+        
+    <h4 class="field-label">404</h4>
+    User Not Found
+        <a href="#ErrorDetail">ErrorDetail</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="listAllUseremailsUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /useremails/useremails</code></pre></div>
+    <div class="method-summary">returns all user emails (<span class="nickname">listAllUseremailsUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">page (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Results page you want to retrieve (0..N) </div><div class="param">size (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Number of records per page. </div><div class="param">sort (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Useremail">Useremail</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "useremailid" : 6,
+  "useremail" : "useremail"
+}, {
+  "useremailid" : 6,
+  "useremail" : "useremail"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#ErrorDetail"><code>ErrorDetail</code> - ErrorDetail</a></li>
+    <li><a href="#Role"><code>Role</code> - Role</a></li>
+    <li><a href="#Searches"><code>Searches</code> - Searches</a></li>
+    <li><a href="#SimpleGrantedAuthority"><code>SimpleGrantedAuthority</code> - SimpleGrantedAuthority</a></li>
+    <li><a href="#User"><code>User</code> - User</a></li>
+    <li><a href="#UserRoles"><code>UserRoles</code> - UserRoles</a></li>
+    <li><a href="#Useremail"><code>Useremail</code> - Useremail</a></li>
+    <li><a href="#ValidationError"><code>ValidationError</code> - ValidationError</a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="ErrorDetail"><code>ErrorDetail</code> - ErrorDetail</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">detail (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">developerMessage (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">errors (optional)</div><div class="param-desc"><span class="param-type"><a href="#array">map[String, array[ValidationError]]</a></span>  </div>
+<div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">title (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Role"><code>Role</code> - Role</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">roleid (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">userroles (optional)</div><div class="param-desc"><span class="param-type"><a href="#UserRoles">array[UserRoles]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Searches"><code>Searches</code> - Searches</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">city (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">collegename (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">degree (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">earnings (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">searchid (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">user (optional)</div><div class="param-desc"><span class="param-type"><a href="#User">User</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="SimpleGrantedAuthority"><code>SimpleGrantedAuthority</code> - SimpleGrantedAuthority</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">authority (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="User"><code>User</code> - User</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">authority (optional)</div><div class="param-desc"><span class="param-type"><a href="#SimpleGrantedAuthority">array[SimpleGrantedAuthority]</a></span>  </div>
+<div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">passwordNoEncrypt (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">savedSearches (optional)</div><div class="param-desc"><span class="param-type"><a href="#Searches">array[Searches]</a></span>  </div>
+<div class="param">useremails (optional)</div><div class="param-desc"><span class="param-type"><a href="#Useremail">array[Useremail]</a></span>  </div>
+<div class="param">userid (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">userroles (optional)</div><div class="param-desc"><span class="param-type"><a href="#UserRoles">array[UserRoles]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="UserRoles"><code>UserRoles</code> - UserRoles</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">role (optional)</div><div class="param-desc"><span class="param-type"><a href="#Role">Role</a></span>  </div>
+<div class="param">user (optional)</div><div class="param-desc"><span class="param-type"><a href="#User">User</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Useremail"><code>Useremail</code> - Useremail</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">user (optional)</div><div class="param-desc"><span class="param-type"><a href="#User">User</a></span>  </div>
+<div class="param">useremail (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">useremailid (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ValidationError"><code>ValidationError</code> - ValidationError</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
