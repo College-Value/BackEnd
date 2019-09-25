@@ -106,7 +106,7 @@ public class UserController
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        return new ResponseEntity<>(authentication.getPrincipal(), HttpStatus.OK);
+        return new ResponseEntity<>(userService.findByName(authentication.getName()), HttpStatus.OK);
     }
 
 
@@ -139,24 +139,24 @@ public class UserController
         return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);
     }
 
-    @ApiOperation(value = "Update user by ID.", response = User.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "User Updated", responseContainer = "List", response =
-                    User.class),
-            @ApiResponse(code = 404, message = "User Not Found", response = ErrorDetail.class)})
-    @PutMapping(value = "/user/{id}")
-    public ResponseEntity<?> updateUser(HttpServletRequest request,
-                                        @RequestBody
-                                                User updateUser,
-                                        @PathVariable
-                                                long id)
-    {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
-
-        userService.update(updateUser, id, request.isUserInRole("ADMIN"));
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @ApiOperation(value = "Update user by ID.", response = User.class)
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200, message = "User Updated", responseContainer = "List", response =
+//                    User.class),
+//            @ApiResponse(code = 404, message = "User Not Found", response = ErrorDetail.class)})
+//    @PutMapping(value = "/user/{id}")
+//    public ResponseEntity<?> updateUser(HttpServletRequest request,
+//                                        @RequestBody
+//                                                User updateUser,
+//                                        @PathVariable
+//                                                long id)
+//    {
+//        logger.trace(request.getMethod()
+//                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+//
+//        userService.update(updateUser, id, request.isUserInRole("ADMIN"));
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
 
 //    @PreAuthorize("hasAuthority('ROLE_ADMIN')")

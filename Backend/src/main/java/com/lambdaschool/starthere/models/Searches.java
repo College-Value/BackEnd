@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "searches")
@@ -32,8 +31,8 @@ public class Searches extends Auditable
 
     @ManyToOne
     @JoinColumn(name = "userid",
-            nullable = false)
-    @JsonIgnoreProperties("searches")
+            nullable = true)
+    @JsonIgnoreProperties({"savedSearches", "userroles", "useremails", "authority"})
     private User user;
 
     public Searches()
@@ -119,6 +118,7 @@ public class Searches extends Auditable
     {
         this.user = user;
     }
+
 
     @Override
     public String toString()

@@ -75,9 +75,27 @@ public class SeedData implements CommandLineRunner
 
 
         u1.getSavedSearches().add(new Searches("USC", "Colubmia", "SC", "45000", "Liberal Arts", u1));
-        u2.getSavedSearches().add(new Searches("UW Madison", "Madison", "WI", "55000", "Piano Performance", u2));
-        u3.getSavedSearches().add(new Searches("SEU", "Lakeland", "FL", "22500", "Leadership", u3));
-        u3.getSavedSearches().add(new Searches("UWO", "Oshkosh", "WI", "47240", "MBA", u3));
+        u1.getSavedSearches().add(new Searches("Adams State", "San Francisco", "CA", "122000", "Design", u1));
+        u1.getSavedSearches().add(new Searches("Adler University", "Garden City", "CO", "51000", "Chemical Engineering",
+                u1));
+        u1.getSavedSearches().add(new Searches("Albany Law School", "Albany", "WA", "45642", "Design", u1));
+        u1.getSavedSearches().add(new Searches("Antioch University Seattle", "Seattle", "WA", "22000", "Creative " +
+                "Writing",
+                u1));
+        u1.getSavedSearches().add(new Searches("Argosy University", "Orance County", "CA", "415000", "Medical",
+                u1));
+
+        u2.getSavedSearches().add(new Searches("Aurora University", "Aurora", "CA", "550500", "Music Performance", u2));
+        u2.getSavedSearches().add(new Searches("Austin College", "Sherman", "PA", "155000", "Computer Information " +
+                "Services", u2));
+        u2.getSavedSearches().add(new Searches("Baptist Bible College", "Springfield", "MI", "27000", "Theology", u2));
+        u2.getSavedSearches().add(new Searches("Bellevue College", "Bellevue", "FL", "155000", "Design",
+                u2));
+
+        u3.getSavedSearches().add(new Searches("Beloit College", "Beloit", "WI", "122500", "MBA", u3));
+        u3.getSavedSearches().add(new Searches("Biola University", "La Mirada", "CA", "125240", "Education", u3));
+        u3.getSavedSearches().add(new Searches("Bowdoin College", "Brunswick", "CA", "147240", "Accounting", u3));
+        u3.getSavedSearches().add(new Searches("Bridgewater College", "Bridgewater", "KT", "34340", "Marketing", u3));
         userService.save(u1);
         userService.save(u2);
         userService.save(u3);

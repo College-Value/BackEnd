@@ -1,0 +1,30 @@
+GET http://localhost:2019/logout
+
+###
+
+GET http://localhost:2019/logout
+
+<> 2019-09-25T113423.401.json
+
+###
+
+GET http://localhost:2019/logout
+
+<> 2019-09-25T113405.401.json
+
+###
+
+GET http://localhost:2019/users/users
+Accept: application/json
+
+<> 2019-09-24T104015.401.json
+
+###
+
+GET http://localhost:2019/users/users
+Accept: application/json
+
+<> 2019-09-24T103125.401.json
+
+###
+

@@ -4,6 +4,7 @@ package com.lambdaschool.starthere.services;
 import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
 import com.lambdaschool.starthere.models.Role;
 import com.lambdaschool.starthere.models.Searches;
+import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.repository.SearchesRepository;
 import com.lambdaschool.starthere.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,11 +45,36 @@ public class SearchesServiceImpl implements SearchesService
     @Override
     public List<Searches> findByUserName(String username)
     {
-        return searchesrepos.findAllByUser_Username(username);
+        return null;
     }
 
     @Override
-    public void delete(long id, boolean isAdmin)
+    public Searches save(Searches searches)
+    {
+        System.out.println("****************** start *************");
+//        Searches newSearch = new Searches();
+//        newSearch.setCollegename(searches.getCollegename());
+//        newSearch.setCity(searches.getCity());
+//        newSearch.setState(searches.getState());
+//        newSearch.setEarnings(searches.getEarnings());
+//        newSearch.setDegree(searches.getDegree());
+//
+
+        Authentication authentication = SecurityContextHolder.getContext()
+                .getAuthentication();
+        System.out.println("*************** auth ***********************");
+        if (searches.getUser().getUsername()
+                .equalsIgnoreCase(authentication.getName()))
+        {
+            return searchesrepos.save(searches);
+        } else
+        {
+            throw new ResourceNotFoundException((authentication.getName() + "not authorized to make change"));
+        }
+    }
+
+    @Override
+    public void delete(long id)
     {
         if (searchesrepos.findById(id)
                 .isPresent())
@@ -59,7 +85,7 @@ public class SearchesServiceImpl implements SearchesService
                     .get()
                     .getUser()
                     .getUsername()
-                    .equalsIgnoreCase(authentication.getName()) || isAdmin)
+                    .equalsIgnoreCase(authentication.getName()))
             {
                 searchesrepos.deleteById(id);
             } else
@@ -72,20 +98,4 @@ public class SearchesServiceImpl implements SearchesService
         }
     }
 
-    @Override
-    public Searches save(Searches searches, boolean isAdmin)
-    {
-        Authentication authentication = SecurityContextHolder.getContext()
-                .getAuthentication();
-
-        if (searches.getUser()
-                .getUsername()
-                .equalsIgnoreCase(authentication.getName()) || isAdmin)
-        {
-            return searchesrepos.save(searches);
-        } else
-        {
-            throw new ResourceNotFoundException((authentication.getName() + "not authorized to make change"));
-        }
-    }
 }
