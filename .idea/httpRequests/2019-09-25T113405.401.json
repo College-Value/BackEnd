@@ -1,7 +1,0 @@
-{
-  "timestamp": 1569425645217,
-  "status": 401,
-  "error": "Unauthorized",
-  "message": "Unauthorized",
-  "path": "/login"
-}
